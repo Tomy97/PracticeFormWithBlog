@@ -1,14 +1,18 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Home from './pages/Home'
+import Users from './pages/Users'
 import LoginForm from './pages/FormLog'
+import Posts from './pages/Posts';
+import Albumes from './pages/Albumes';
 import { Container } from 'react-bootstrap'
+import NavBarContainer from './components/NavbarComponet'
 
 const App = () => {
   return (
-    <Container className="w-100 h-100">
-      <BrowserRouter>
+    <BrowserRouter>
+      <NavBarContainer />
+      <Container>
         <Switch>
           <Route exact path="/">
             <LoginForm></LoginForm>
@@ -17,11 +21,17 @@ const App = () => {
             <LoginForm></LoginForm>
           </Route>
           <Route exact path="/home">
-            <Home></Home>
+            <Users></Users>
+          </Route>
+          <Route exact path="/posts">
+            <Posts></Posts>
+          </Route>
+          <Route exact path="/albumes">
+            <Albumes></Albumes>
           </Route>
         </Switch>
-      </BrowserRouter>
-    </Container>
+      </Container>
+    </BrowserRouter>
   )
 }
 
