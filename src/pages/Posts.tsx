@@ -5,7 +5,7 @@ import useFetch from '../hooks/useFetch'
 const Posts = () => {
   const { posts } = useFetch()
   return (
-    <div>
+    <>
       <h1 className="text-center">Esta es la pagina de Posts</h1>
       <Table striped bordered hover variant="dark">
         <thead>
@@ -33,7 +33,7 @@ const Posts = () => {
           ))}
         </tbody>
       </Table>
-    </div>
+    </>
   )
 }
 

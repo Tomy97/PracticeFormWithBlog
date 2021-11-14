@@ -1,28 +1,29 @@
-import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import img from '../assets/img/logo.jpg'
 
 const NavbarComponet = () => {
   return (
-    <Navbar bg="dark">
-      <Container>
-        <Navbar.Brand className="text-white">
-          <img
+    <Navbar bg="dark" expand="lg">
+    <Container>
+      <Navbar.Brand className="text-white">
+        <img
             src={img}
             width="30"
             height="30"
             className="d-inline-block"
             alt="logo"
           />
-          Pagina de Prueba
-        </Navbar.Brand>
-        <Nav>
-          <Nav.Link className="text-white" href="/users">Users</Nav.Link>
-          <Nav.Link className="text-white" href="/posts">Posts</Nav.Link>
-          <Nav.Link className="text-white" href="/albumes">Albumes</Nav.Link>
+          Pagina de Prueba</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="/users">Users</Nav.Link>
+          <Nav.Link href="/posts">Posts</Nav.Link>
+          <Nav.Link href="/albumes">Albumes</Nav.Link>
         </Nav>
-      </Container>
-    </Navbar>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
   )
 }
 
