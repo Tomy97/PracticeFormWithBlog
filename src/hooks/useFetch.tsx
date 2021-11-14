@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { PostI } from '../interfaces/Post'
+import { PostI } from '../interfaces/PostI'
 import axios from 'axios'
 
 const useFetch = () => {
   const [posts, setPosts] = useState<PostI[]>([])
 
   const getPosts = async () => {
-    const apiPost: string = `https://jsonplaceholder.typicode.com/posts`
-    await axios.get(apiPost).then((res) => {
-      setPosts(res.data)
+    const apiPost = `https://jsonplaceholder.typicode.com/posts?_page=1&_limit=10`
+    await axios.get(apiPost).then(({ data }) => {
+      setPosts(data)
     })
   }
 
