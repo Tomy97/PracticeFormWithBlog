@@ -15,11 +15,11 @@ const NavbarComponet = () => {
           />
           Pagina de Prueba</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse id="basic-navbar-nav" >
         <Nav className="me-auto">
-          <Nav.Link href="/users">Users</Nav.Link>
-          <Nav.Link href="/posts">Posts</Nav.Link>
-          <Nav.Link href="/albumes">Albumes</Nav.Link>
+          <Nav.Link className="text-white" href="/users">Users</Nav.Link>
+          <Nav.Link className="text-white" href="/posts">Posts</Nav.Link>
+          <Nav.Link className="text-white" href="/albumes">Albumes</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
