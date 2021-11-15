@@ -1,9 +1,14 @@
-import React from 'react'
 import { Button, Table } from 'react-bootstrap'
+import ModalComponent from '../components/ModalComponent'
 import useFetch from '../hooks/useFetch'
 
 const Posts = () => {
   const { posts } = useFetch()
+  const openModal = (id: number) => {
+    const modal = ModalComponent(id)
+    console.log(modal)
+  }
+
   return (
     <>
       <h1 className="text-center">Esta es la pagina de Posts</h1>
@@ -24,10 +29,12 @@ const Posts = () => {
               <td className="text-center">{p.title}</td>
               <td className="text-center"> {p.body} </td>
               <td className="text-center">
-                <Button variant="success">Detalles...</Button>
+                <Button variant="success" onClick={() => openModal(p.userId!)}>
+                  Detalles
+                </Button>
               </td>
               <td className="text-center">
-                <Button variant="info">Comentarios...</Button>
+                <Button variant="info">Comentarios</Button>
               </td>
             </tr>
           ))}
